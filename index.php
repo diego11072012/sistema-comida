@@ -36,13 +36,11 @@
 <body id="container-page-index">
     <?php include './inc/navbar.php';?>
     <div class="jumbotron" id="jumbotron-index">
-      <h1><span class="tittles-pages-logo">Lunch Fast</span> <small style="color: #fff;">Ecuador</small></h1>
+      <h1><span class="tittles-pages-logo">Shrico</span></h1>
       <p>
           
-          <!--Visitas:--> <script type="text/javascript" src="http://localhost/OnlineStore/process/visitas.php"></script>
-          <br> <?php echo $Bienvenido; 
-
-            ?>
+          <!--Visitas:--> <script type="text/javascript" src="/process/visitas.php"></script>
+          <br> <?php echo $Bienvenido;?>
       </p>
     </div>
 	
@@ -117,7 +115,7 @@
     
     
     
-    <?php  include './inc/footer.php';
+    <?php  include '/inc/footer.php';
     
     
     

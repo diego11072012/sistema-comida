@@ -63,7 +63,7 @@ if ($abandono != NULL && $abandono != "") {
     }
     $_SESSION['anterior'] = "$enlace";
 }  else {
-    $_SESSION['anterior'] = "http://localhost/OnlineStore/index.php";
+    $_SESSION['anterior'] = "index.php";
 }
 
 ob_end_flush();

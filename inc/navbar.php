@@ -32,7 +32,7 @@
         <!-- Menu Alimentos Registrados -->
         <div class="col-xs-4">
             <figure class="logo-navbar"></figure>
-            <p class="text-navbar tittles-pages-logo">Fast Lunch</p>
+            <p class="text-navbar tittles-pages-logo"><a href="index.php"><img src="./assets/img/logo-shrico.png" width="85px"></a></p>
         <!--Seccion de codigo para cambiar el idioma-->    
             <!--<div class="dropdown closed">
                 <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -189,7 +189,7 @@
 
 
                     <a accesskey="n" href="index.php" class="table-cell-td"><?php echo $inicio; ?></a>
-                    <a accesskey="p" href="http://localhost/OnlineStore/product.php?from=<?php echo $origen; ?>"
+                    <a accesskey="p" href="product.php?from=<?php echo $origen; ?>"
                         class="table-cell-td"><?php echo $producto; ?></a>
                     <?php
                             if(!$_SESSION['nombreAdmin']==""){
@@ -316,7 +316,7 @@
     <br><br>
     <ul class="list-unstyled text-center">
         <li><a href="index.php"><?php echo $inicio; ?></a></li>
-        <li><a href="http://localhost/OnlineStore/product.php?from=<?php echo $origen; ?>">Producto</a></li>
+        <li><a href="product.php?from=<?php echo $origen; ?>">Producto</a></li>
         <?php 
                 if(!$_SESSION['nombreAdmin']==""){
                     echo '<li><a href="configAdmin.php">'.$admntra.'</a></li>';
