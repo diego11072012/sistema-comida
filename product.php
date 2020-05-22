@@ -2,51 +2,12 @@
 session_start(); 
 include './library/configServer.php';
 include './library/consulSQL.php';
-$_SESSION['t-product']=date('s'); 
-$origen = basename($_SERVER['PHP_SELF']);
-$anterior = $_GET['from'];
-$t_anterior = 0;
-
-if($anterior == 'index.php'){
-  $t_anterior = $_SESSION['t-index']; 
-}
-if($anterior == 'registration.php'){
-  $t_anterior = $_SESSION['t-registro'];
-}
-if($anterior == 'infoProd.php'){
-  $t_anterior = $_SESSION['t-info']; 
-}
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "store";
-
-$conectar = mysqli_connect($servername, $username, $password, $database) or die ('Error');
-
-
-$p_anterior = $anterior; // variable $anterior
-$p_actual = $origen;
-$t_actual = $_SESSION['t-product']=date('s');
-$tiempo_necesario = $t_actual - $t_anterior;
-if($tiempo_necesario < 0){
-    $tiempo_necesario = $tiempo_necesario + 60 ;
-}
-$sql = "INSERT INTO `tiempo_transicion`(`pagina_origen`, `pagina_llegada`, `tiempo`) VALUES ('$anterior','$origen','$tiempo_necesario')";
-$insertar = mysqli_query($conectar,$sql) or die(mysqli_error($conectar));
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Productos</title>
     <?php include './inc/link.php'; ?>
-    <link href="https://panel.chatcompose.com/static/global/export/css\main.af14124f.css" rel="stylesheet">    
-    <link href="https://panel.chatcompose.com/static/global/export/css\main.af14124f.css" rel="stylesheet">    <script async type="text/javascript" src="https://panel.chatcompose.com/static/global/export/js\main.82da0a06.js" user="cecilio1877-ChatControl"></script>  
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156978057-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -55,31 +16,22 @@ $insertar = mysqli_query($conectar,$sql) or die(mysqli_error($conectar));
   gtag('config', 'UA-156978057-2');
 </script>
 
-    <!-- clicky -->
-    
-  <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101232897);</script>
-<script async src="//static.getclicky.com/js"></script>
-    
-    
-    
-    
-    
-   
 </head>
 <body id="container-page-product">
     <?php include './inc/navbar.php'; ?>
     <section id="store">
        <br>
-        <div class="container">
-            <div class="page-header">
-              <h1>Tienda <small class="tittles-pages-logo">Fast Lunch</small></h1>
+        <div class="container-fluid" style="max-width: 1440px;margin: 0 auto;padding: 0px 0px;">
+            <div class="page-header" style="text-align:center;margin:0px">
+              <img class="product-banner" src="assets/img/product-banner.jpg" style="width: 100%;">
+              <h1><strong>PRODUCTOS</strong></h1>
             </div>
             <br><br>
             <div class="row">
                 <div class="col-xs-12">
                     <ul id="store-links" class="nav nav-tabs" role="tablist">
-                      <li role="presentation"><a href="#all-product" role="tab" data-toggle="tab" aria-controls="all-product" aria-expanded="false">Todos los productos</a></li>
-                      <li role="presentation" class="dropdown active">
+                      <li role="presentation"><a href="#all-product" role="tab" data-toggle="tab" aria-controls="all-product" aria-expanded="false"></a></li>
+                      <li role="presentation" class="dropdown active" style="display:none">
                         <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">Categorías <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
                           <!-- ==================== Lista categorias =============== -->
@@ -97,7 +49,7 @@ $insertar = mysqli_query($conectar,$sql) or die(mysqli_error($conectar));
                         </ul>
                       </li>
                     </ul>
-                    <div id="myTabContent" class="tab-content">
+                    <div id="myTabContent" class="tab-content" style="margin-top: -50px;">
                       <div role="tabpanel" class="tab-pane fade" id="all-product" aria-labelledby="all-product-tab">
                           <br><br>
                         <div class="row">
@@ -112,12 +64,11 @@ $insertar = mysqli_query($conectar,$sql) or die(mysqli_error($conectar));
                                        <div class="thumbnail">
                                          <a href="infoProd.php?from='.$origen.'&CodigoProd='.$fila['CodigoProd'].'"><img src="assets/img-products/'.$fila['Imagen'].'"></a>
                                          <div class="caption">
-                                           <h3>Hora máxima de reservación: '.$fila['Marca'].' horas</h3>
                                            <p>'.$fila['NombreProd'].'</p>
                                            <p>$'.$fila['Precio'].'</p>
                                            <p class="text-center">
-                                               <a href="infoProd.php?from='.$origen.'&CodigoProd='.$fila['CodigoProd'].'" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp; Detalles</a>&nbsp;&nbsp;
-                                               <button value="'.$fila['CodigoProd'].'" class="btn btn-success btn-sm botonCarrito"><i class="fa fa-shopping-cart"></i>&nbsp; Añadir</button>
+                                               <a href="infoProd.php?from='.$origen.'&CodigoProd='.$fila['CodigoProd'].'" class="btn btn-primary btn-sm">Ver +</a>&nbsp;&nbsp;
+                                               <button value="'.$fila['CodigoProd'].'" class="btn btn-success btn-sm botonCarrito">Añadir</button>
                                            </p>
 
                                          </div>
@@ -208,6 +159,11 @@ $insertar = mysqli_query($conectar,$sql) or die(mysqli_error($conectar));
     </script>
 </body>
 </html>
+<style>
+.row {
+margin: 0px !important;
+}
+</style>
 
 
 

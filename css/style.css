@@ -25,7 +25,7 @@ nav{
     width: 100%;
     position: fixed;
     top: 0px;
-    background-color: #36284c;
+    background-color: #1f753d;
     box-shadow: 2px 0px 7px #000;
 	z-index: 50;
 }
@@ -42,20 +42,19 @@ nav{
 	color: #fff;
 }
 .contenedor-tr > a:hover{
-	background-color: #B9DEF5;
+	/*background-color: #B9DEF5;
     transition: background-color .4s ease-in;
     -moz-transition: background-color .4s ease-in;
     -webkit-transition: background-color .4s ease-in;
     -ms-transition: background-color .4s ease-in;
-    -o-transition: background-color .4s ease-in;
-}
-.contenedor-tr > a:last-child{
-	border-right: 1px solid rgba(149, 165, 166,0.8);
+    -o-transition: background-color .4s ease-in;*/
+    color: #f0b169;
+    font-weight: bold;
+    transition: 0.5s;
 }
 .table-cell-td {
   display: table-cell;
   padding: 20px 7px;
-  border-left: 1px solid rgba(149, 165, 166,0.8);
   text-align: center;
   width: 20%;
 }
@@ -82,7 +81,7 @@ nav{
 section{
     width: 100%;
     margin: 0px;
-    padding: 90px 0px;
+    padding: 40px 0px;
 }
 article{
     width: 100%;
@@ -92,8 +91,9 @@ article{
 footer{
     width: 100%;
     color: #fff;
-    background-color: #36284c;
+    background-color: #1f753d;
     padding: 40px 0px;
+    display: inline-block;
 }
 .social-icon{
     margin: 7px 7px;
@@ -128,19 +128,23 @@ footer{
     padding: 20px;
 }
 #container-carrito-compras{
-   background-color: rgb(43, 29, 29);
-   color:#fff;
+   color:#000;
    display: none;
+   background-color: #fff;
+   width: 30%;
+   position: absolute;
+   right: 0;
+   z-index: 100;
+   margin-top: 5%;
 }
 /* ========================================= index styles ======================================*/
-#container-page-index{
-    background-image: url(../assets/img/font-index.JPG);	
-}
 #jumbotron-index{
     margin: 0px;
     padding: 140px 25px;
     color: #fff;
-    background-color: rgba(0,0,0,.7);
+    background: url(../assets/img/banner-index-100.jpg);
+    background-position-y: -60px;
+    height: 500px;
 }
 #new-prod-index{
     background-color: rgba(255,255,255,.9);
@@ -154,16 +158,13 @@ footer{
     color: #000;
 }
 /* ========================================= product styles ======================================*/
-#container-page-product{
-    background-image: url(../assets/img/font-index.JPG);
-}
 #store, #infoproduct, #container-pedido{
     background-color: rgba(255,255,255,.97);
     min-height: 900px;
 }
 /* ========================================= registration styles ======================================*/
 #container-page-registration{
-    background-image: url(../assets/img/font-registration.jpg);
+    /*background-image: url(../assets/img/font-registration.jpg);*/
 }
 #form-registration{
     min-height: 900px;
@@ -173,8 +174,7 @@ footer{
 #container-form{
     width: 100%;
     padding: 40px;
-    background-color: #333;
-    border-radius: 7px;
+    background-color: #2f4153;
 }
 /* ========================================= configAdmin styles ======================================*/
 #container-page-configAdmin{
@@ -196,4 +196,204 @@ footer{
     border: 1px solid #e0e1e1 !important;
     border-radius: 4px;
     padding: 10px;
+}
+
+.btn-success, .btn-danger, .btn-primary{
+    color: white;
+    border: 2px solid #1f753d;
+    background: #1f753d;
+    font-family: sans-serif;
+    padding: 10px 10px;
+    border-radius: 0px;
+    font-weight: 900;
+}
+.btn-success:hover, .btn-danger:hover, .btn-primary:hover{
+    color: #1f753d;
+    background: white;
+    border: 2px solid #1f753d;
+}
+.text-center a{
+    width: 40%;    
+}
+
+.footer-distributed{
+	background-color: #1f753d;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+ 
+	padding: 55px 50px;
+	margin-top: 80px;
+}
+ 
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+ 
+.footer-distributed .footer-left{
+	width: 40%;
+}
+ 
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px sans-serif, cursive;
+	margin: 0;
+}
+ 
+.footer-distributed h3 span{
+    color: #f5ca89;
+}
+ 
+ 
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+ 
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+ 
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+ 
+ 
+.footer-distributed .footer-center{
+	width: 35%;
+}
+ 
+.footer-distributed .footer-center i{
+	background-color:  #1f753d;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+ 
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+ 
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+ 
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+ 
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+ 
+.footer-distributed .footer-right{
+	width: 20%;
+}
+ 
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+ 
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+ 
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+ 
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #1f753d;
+	border-radius: 2px;
+ 
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+ 
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+ 
+ 
+@media (max-width: 880px) {
+ 
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	
+	}
+ 
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+ 
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+	.main {
+		line-height: normal;
+		font-size: auto;
+	}
+ 
+}
+a{
+    color: #f5ca89;
+}
+
+.input-group .form-control:last-child{
+    height: 40px !important;
+    border-radius: 0px !important;
+    font-size: 15px !important;
+    font-family: sans-serif !important;
+    width: 100%;
+    background: #2f4153;
+    border: 2px solid #fff;
+    color: white;
+}
+
+.input-group{
+    display: initial;
 }

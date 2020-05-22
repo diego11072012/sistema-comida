@@ -11,7 +11,7 @@ if(isset($_GET['precio'])){
     $_SESSION['contador']++;
 }
 
-echo '<table class="table table-bordered">';
+echo '<table class="table">';
 for($i = 0;$i< $_SESSION['contador'];$i++){
     $consulta=ejecutarSQL::consultar("select * from producto where CodigoProd='".$_SESSION['producto'][$i]."'");
     while($fila = mysqli_fetch_array($consulta)) {

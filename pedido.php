@@ -1,5 +1,5 @@
  <?php
- require 'requirelanguage.php';
+ session_start();
 include 'library/configServer.php';
 include 'library/consulSQL.php';
 	?>

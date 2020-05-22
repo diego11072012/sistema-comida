@@ -1,9 +1,5 @@
-
-
-
 <?php
 session_start();
-
 include '../library/configServer.php';
 include '../library/consulSQL.php';
 $num = $_POST['clien-number'];
@@ -16,17 +12,13 @@ if ($num == 'log') {
   $passClien = $_POST['clien-pass'];
 }
 sleep(3);
-
-$verdata =  ejecutarSQL::consultar("select * from cliente where Clave='" . $passClien . "' and Nombre='" . $nameClien . "'");
+$verdata =  ejecutarSQL::consultar("select * from cliente1 where Clave='" . $passClien . "' and Nombre='" . $nameClien . "'");
 $num =  mysqli_num_rows($verdata);
 if ($num > 0) {
   if ($_SESSION['sumaTotal'] > 0) {
-
-
     $data = mysqli_fetch_array($verdata);
-    $nitC = $data['NIT'];
+    $nitC = $data['Email'];
     $StatusV = "Pendiente";
-
     /*Insertando datos en tabla venta*/
     consultasSQL::InsertSQL("venta", "Fecha, NIT, Descuento, TotalPagar, Estado", "'" . date('d-m-Y') . "','" . $nitC . "','0','" . $_SESSION['sumaTotal'] . "','" . $StatusV . "'");
 

@@ -1,4 +1,3 @@
-
 <?php
     session_start();
     include '../library/configServer.php';
@@ -8,33 +7,20 @@
     $clave=md5($_POST['clave-login']);
     $radio=$_POST['optionsRadios'];
     if(!$nombre==""&&!$clave==""){
-        $verUser=ejecutarSQL::consultar("select * from cliente where Nombre='$nombre' and Clave='$clave'");
+        $verUser=ejecutarSQL::consultar("select * from cliente1 where Nombre='$nombre' and Clave='$clave'");
         $verAdmin=ejecutarSQL::consultar("select * from administrador where Nombre='$nombre' and Clave='$clave'");
         if($radio=="option2"){
             $AdminC=mysqli_num_rows($verAdmin);
             if($AdminC>0){
                 $_SESSION['nombreAdmin']=$nombre;
-                $_SESSION['claveAdmin']=$clave;
-				
-				
+                $_SESSION['claveAdmin']=$clave;				
 				$codigo = "LOGIN_OK_ADMIN";
 				$curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
 				$tipoAccion = "INGRESO";
-				$mensaje = "USUARIO INGRESO CORRECTAMENTE [".$tipoAccion.": ".$codigo."]";
-				
+				$mensaje = "USUARIO INGRESO CORRECTAMENTE [".$tipoAccion.": ".$codigo."]";		
 				echo '<img src="assets/img/error.png" class="center-all-contens"><br>'.$mensaje;
-				ejecutarSQL::consultar("insert ACCIONES values ('$codigo','$nombre','$tipoAccion','$mensaje','$curPageName',CURRENT_TIMESTAMP) ");
-				
-				
-				
-				
-                echo '<script> location.href="index.php"; </script>';
-				
-				
-				
-				
-				
-				
+				ejecutarSQL::consultar("insert ACCIONES values ('$codigo','$nombre','$tipoAccion','$mensaje','$curPageName',CURRENT_TIMESTAMP) ");		
+                echo '<script> location.href="index.php"; </script>';												
             }else{
 				$codigo = "login_1";
 				$curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 

@@ -17,7 +17,7 @@ class ejecutarSQL {
     }
     public static function consultar($query) {
         if (!$consul = mysqli_query(ejecutarSQL::conectar(),$query )) {
-            die(mysqli_error().'Error en la consulta SQL ejecutada');
+            die(mysqli_errno(ejecutarSQL::conectar()).'Error en la consulta SQL ejecutada');
         }
         return $consul;
     }  

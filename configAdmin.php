@@ -3,35 +3,22 @@
 include './library/configServer.php';
 include './library/consulSQL.php';
 include './process/securityPanel.php';
-
-
 $usuario = $_SESSION['nombreAdmin'];
 $codigo = "INGRESO_OK_CONFIGADMIN";
 $curPageName = substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1);
 $tipoAccion = "INGRESO";
 $mensaje = "USUARIO INGRESO CORRECTAMENTE [" . $tipoAccion . ": " . $codigo . "]";
 ejecutarSQL::consultar("insert ACCIONES values ('$codigo','$usuario','$tipoAccion','$mensaje','$curPageName',CURRENT_TIMESTAMP) ");
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title><?php echo $ad; ?></title>
     <?php include './inc/link.php'; ?>
     <script type="text/javascript" src="js/admin.js"></script>
-    <link href="https://panel.chatcompose.com/static/global/export/css\main.af14124f.css" rel="stylesheet">
-    <!--Visitas:--> <script type="text/javascript" src="http://localhost/OnlineStore/process/visitas.php"></script>
-    <script async type="text/javascript" src="https://panel.chatcompose.com/static/global/export/js\main.82da0a06.js" user="xlopez-ayuda"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156978057-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -46,18 +33,16 @@ ejecutarSQL::consultar("insert ACCIONES values ('$codigo','$usuario','$tipoAccio
         var clicky_site_ids = clicky_site_ids || [];
         clicky_site_ids.push(101232897);
     </script>
-    <script async src="//static.getclicky.com/js"></script>
-
-
-
 </head>
 
 <body id="container-page-configAdmin">
     <?php include './inc/navbar.php'; ?>
     <section id="prove-product-cat-config">
+    <img src="./assets/img/insert-product-100.jpg" style="width:100%">
         <div class="container">
             <div class="page-header">
-                <h1><?php echo $panel; ?> <small class="tittles-pages-logo">Fast Luch</small></h1>
+                
+                <h1 style="font-family: sans-serif;color: #a6704c;"><strong>Módulo</strong> <small style="color: #a6704c;">Registro Productos</small></h1>
             </div>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
